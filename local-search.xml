@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>leetcode 面试经典 150 题</title>
+    <link href="/2024/03/10/leetcode-hot-150/"/>
+    <url>/2024/03/10/leetcode-hot-150/</url>
+    
+    <content type="html"><![CDATA[<h2 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="121 - 买卖股票的最佳时机"></a>121 - 买卖股票的最佳时机</h2><p>这道题最开始直接暴力做，果然通不过，超时了。于是开始找规律，发现了如下的结果，从后往前遍历数组，维护 value 和 max 两个变量。用 get 记录收益。</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">prices</span>: <span class="hljs-number">7</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">6</span>,  <span class="hljs-number">4</span><br><span class="hljs-attribute">value</span> : <span class="hljs-number">0</span>, -<span class="hljs-number">6</span>, -<span class="hljs-number">2</span>, -<span class="hljs-number">4</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">3</span><br><span class="hljs-attribute">max</span>   : <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">3</span><br><span class="hljs-attribute">get</span>   : <span class="hljs-number">0</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">0</span>,  <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2024/03/03/hello-world/"/>
     <url>/2024/03/03/hello-world/</url>
