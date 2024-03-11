@@ -4,26 +4,19 @@
   
   
   <entry>
-    <title>BAOYAN + 实习</title>
-    <link href="/2024/03/11/baoyan/"/>
-    <url>/2024/03/11/baoyan/</url>
-    
-    <content type="html"><![CDATA[<h2 id="时间安排"><a href="#时间安排" class="headerlink" title="时间安排"></a>时间安排</h2><ul><li><p><strong>复习专业内容</strong>【三月、四月、五月】</p><ul><li>机试<ul><li>Leetcode hot 100</li><li>剑指 offer</li></ul></li><li>润色经历<ul><li>比赛项目的实现，创新点，优化</li><li>科研参与情况，对科研方向的了解</li></ul></li><li>专业知识<ul><li>数学：高数、线代</li><li>专业课：数据结构、算法、计算机网络、操作系统、数据库、编译原理等</li></ul></li><li>英语能力<ul><li>口语：翻译论文、名词介绍、问答、英语解释算法</li></ul></li></ul></li><li><p><strong>投递简历</strong>【三月】</p><blockquote><p>春招一般在3月初开始，这时候也会开始招实习。</p></blockquote></li><li><p><strong>院校选择</strong>【三月、四月】</p></li><li><p><strong>参加夏令营</strong>【五月、六月】</p><ul><li>文书准备：本科成绩单，获奖证书打印，推荐信，简历，四六级证明，个人陈述</li></ul></li></ul><h2 id="院校选择"><a href="#院校选择" class="headerlink" title="院校选择"></a>院校选择</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>保研<ul><li>绿群：<a href="https://github.com/CS-BAOYAN">CS-BAOYAN</a></li><li>夏令营：<a href="https://github.com/CS-BAOYAN/CSSummerCamp2024">CSSummerCamp2024</a></li><li>复习笔记：<a href="https://github.com/WondrousWisdomcard/SYSU-JuniorExperience/tree/main/%E4%BF%9D%E7%A0%94%E4%BC%81%E5%88%92">保研企划</a></li><li>前人经验：<ul><li><a href="https://xieincz.github.io/post/2023-ji-suan-ji-0-ke-yan-de-bao-yan-bian-yuan-ren-de-zheng-zha-zhi-lu-ha-shen-zhong-da-hua-nan-li-gong-shan-da/">2023计算机0科研的保研边缘人的挣扎之路（哈深、中大、华南理工、山大）</a></li><li><a href="https://blog.yfyang.me/blog/about-baoyan">保研总结</a></li></ul></li></ul></li><li>实习<ul><li>经验：<a href="https://github.com/selfboot/CS_Offer">CS-Offer</a></li></ul></li></ul>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>leetcode 面试经典 150 题</title>
+    <title>Leetcode 面试经典 150 题</title>
     <link href="/2024/03/10/leetcode-hot-150/"/>
     <url>/2024/03/10/leetcode-hot-150/</url>
     
     <content type="html"><![CDATA[<h2 id="121-买卖股票的最佳时机-Ⅰ"><a href="#121-买卖股票的最佳时机-Ⅰ" class="headerlink" title="121 - 买卖股票的最佳时机-Ⅰ"></a><a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/?envType=study-plan-v2&envId=top-interview-150">121 - 买卖股票的最佳时机-Ⅰ</a></h2><p>这道题最开始直接暴力做，果然通不过，超时了。于是开始找规律，发现了如下的结果，从后往前遍历数组，维护 value 和 max 两个变量。用 get 记录收益。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C">prices: <span class="hljs-number">7</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">6</span>,  <span class="hljs-number">4</span><br>value : <span class="hljs-number">0</span>, <span class="hljs-number">-6</span>, <span class="hljs-number">-2</span>, <span class="hljs-number">-4</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-3</span>   <span class="hljs-comment">// value = prices[i] - prices[0]</span><br>max   : <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-3</span>   <span class="hljs-comment">// max = the max value from i to end</span><br>get   : <span class="hljs-number">0</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">0</span>,  <span class="hljs-number">0</span>   <span class="hljs-comment">// get = max - value</span><br></code></pre></td></tr></table></figure><p>时间复杂度：$O(n)$<br>空间复杂度：$O(1)$  </p><blockquote><p>但是看到答案后发现自己又想太多了。。。对于 122-买卖股票的最佳时机 Ⅱ 我也同样用了规律的方式求解，但实际上也有更简单的方法。</p></blockquote><h2 id="55-跳跃游戏"><a href="#55-跳跃游戏" class="headerlink" title="55 - 跳跃游戏"></a><a href="https://leetcode.cn/problems/jump-game/?envType=study-plan-v2&envId=top-interview-150">55 - 跳跃游戏</a></h2><p>这道题成功想到了题解的方法。维护一个最远位置 pos, 对于数组每个元素，计算其最远到达位置 num[i] + i，更新 pos。如果当前 i &gt; pos，说明无法到达当前位置。</p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
     
   </entry>
   
