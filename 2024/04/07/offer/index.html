@@ -16,22 +16,24 @@
   <meta name="author" content="lafe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 回溯算法 + 剪枝如果解决一个问题有多个步骤，每一个步骤有多种方法，题目又要我们找出所有的方法，可以使用回溯算法。回溯算法通常可以通过一些剪枝减少搜索。   组合问题：可以使用递归实现（二进制枚举），以下是模板：  1234567891011121314151617181920vector&lt;vector&lt;int&gt;&gt; res; &#x2F;&#x2F; res 数组用于存储当前已被选择的数">
+    <meta name="description" content="计算机网络 OSI 七层模型和 TCP&#x2F;IP 五层模型：OSI 七层模型包括应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。TCP&#x2F;IP 四层模型少了表示层和会话层，并将数据链路层和物理层合为网络接口层（课本上讲的五层模型是教学使用）。  为什么分层？ 各层相互独立，不须关注其他层的实现。 灵活性和可替换性：每一层都可以根据需要进行修改或替换，而不会影响到整个网络的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重要题型">
-<meta property="og:url" content="http://xu-zhy.github.io/2024/04/04/OJpattern/index.html">
+<meta property="og:title" content="八股复习">
+<meta property="og:url" content="http://xu-zhy.github.io/2024/04/07/offer/index.html">
 <meta property="og:site_name" content="Zhiyong Xu">
-<meta property="og:description" content="1. 回溯算法 + 剪枝如果解决一个问题有多个步骤，每一个步骤有多种方法，题目又要我们找出所有的方法，可以使用回溯算法。回溯算法通常可以通过一些剪枝减少搜索。   组合问题：可以使用递归实现（二进制枚举），以下是模板：  1234567891011121314151617181920vector&lt;vector&lt;int&gt;&gt; res; &#x2F;&#x2F; res 数组用于存储当前已被选择的数">
+<meta property="og:description" content="计算机网络 OSI 七层模型和 TCP&#x2F;IP 五层模型：OSI 七层模型包括应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。TCP&#x2F;IP 四层模型少了表示层和会话层，并将数据链路层和物理层合为网络接口层（课本上讲的五层模型是教学使用）。  为什么分层？ 各层相互独立，不须关注其他层的实现。 灵活性和可替换性：每一层都可以根据需要进行修改或替换，而不会影响到整个网络的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-04T07:01:50.662Z">
-<meta property="article:modified_time" content="2024-04-05T08:14:27.096Z">
+<meta property="og:image" content="http://xu-zhy.github.io/offer/osi.png">
+<meta property="article:published_time" content="2024-04-07T02:36:23.687Z">
+<meta property="article:modified_time" content="2024-04-07T03:35:11.701Z">
 <meta property="article:author" content="lafe">
-<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="实习">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://xu-zhy.github.io/offer/osi.png">
   
   
   
-  <title>重要题型 - Zhiyong Xu</title>
+  <title>八股复习 - Zhiyong Xu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="重要题型"></span>
+            <span id="subtitle" data-typed-text="八股复习"></span>
           
         </div>
 
@@ -208,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-04 15:01" pubdate>
-          2024年4月4日 下午
+        <time datetime="2024-04-07 10:36" pubdate>
+          2024年4月7日 上午
         </time>
       </span>
     
@@ -220,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          792 字
+          923 字
         
       </span>
     
@@ -231,7 +233,7 @@
         
         
         
-          7 分钟
+          8 分钟
         
       </span>
     
@@ -268,35 +270,73 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">重要题型</h1>
+            <h1 id="seo-header">八股复习</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="1-回溯算法-剪枝"><a href="#1-回溯算法-剪枝" class="headerlink" title="1. 回溯算法 + 剪枝"></a>1. 回溯算法 + 剪枝</h3><p>如果解决一个问题有多个步骤，每一个步骤有多种方法，题目又要我们找出所有的方法，可以使用回溯算法。回溯算法通常可以通过一些剪枝减少搜索。 </p>
-<ul>
-<li>组合问题：可以使用递归实现（二进制枚举），以下是模板：  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; res; <span class="hljs-comment">// res 数组用于存储当前已被选择的数字</span><br>vector&lt;<span class="hljs-type">int</span>&gt; path;<br><span class="hljs-comment">// cur 表示当前到达位置， n 表示序列总长度，k 表示目标长度</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> cur, <span class="hljs-type">int</span> n, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>    <span class="hljs-comment">// 剪枝</span><br>    <span class="hljs-keyword">if</span> (path.<span class="hljs-built_in">size</span>() + (n - cur + <span class="hljs-number">1</span>) &lt; k) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (k == path.<span class="hljs-built_in">size</span>())&#123;<br>        res.<span class="hljs-built_in">push_back</span>(path);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// 考虑选择当前位置</span><br>    path.<span class="hljs-built_in">push_back</span>(cur);<br>    <span class="hljs-built_in">dfs</span>(cur + <span class="hljs-number">1</span>, n, k);<br>    path.<span class="hljs-built_in">pop_back</span>();<br>    <span class="hljs-comment">// 考虑不选择当前位置</span><br>    <span class="hljs-built_in">dfs</span>(cur + <span class="hljs-number">1</span>, n, k);<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li>cur 用于指示当前检查的位置，要么加入当前值，要么不加入，故算法复杂度为 $O(2^n)$</li>
-<li>剪枝处理：如果当前未确定状态的序列长度：k-path.size() 大于序列剩余长度：n-cur+1，那么就不需要再往下递归了。经过优化，复杂度为$O(C^k_n\times k)$。这里乘 k 是考虑了将解输出。</li>
-<li>相关题型：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combinations/description/?envType=study-plan-v2&envId=top-interview-150">组合问题</a>，<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum/description/?envType=study-plan-v2&envId=top-interview-150">组合总和</a>，<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subsets/description/">子集</a></li>
+                <h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><ol>
+<li>OSI 七层模型和 TCP&#x2F;IP 五层模型：OSI 七层模型包括<strong>应用层、表示层、会话层、传输层、网络层、数据链路层、物理层</strong>。TCP&#x2F;IP 四层模型少了表示层和会话层，并将数据链路层和物理层合为网络接口层（课本上讲的五层模型是教学使用）。<br> <img src="/offer/osi.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>为什么分层？<ul>
+<li>各层相互独立，不须关注其他层的实现。</li>
+<li>灵活性和可替换性：每一层都可以根据需要进行修改或替换，而不会影响到整个网络的结构</li>
+<li>分层抽象：传输层：进程到进程；网络层：主机到主机；链路层：节点到节点</li>
 </ul>
 </li>
-<li>排列问题：同样使用类似的递归实现，但是由于每个数都需要添加进去，故不再是通过 cur 来指示位置，而需要记录哪些值(record)已经添加到结果。  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;res;<br>vector&lt;<span class="hljs-type">int</span>&gt; path;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums,<span class="hljs-type">int</span> length,vector&lt;<span class="hljs-type">int</span>&gt;&amp; record)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(path.<span class="hljs-built_in">size</span>()==length)&#123;<br>            res.<span class="hljs-built_in">push_back</span>(path);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;length;++i)&#123;<br>        <span class="hljs-keyword">if</span>(record[i]==<span class="hljs-number">0</span>)&#123; <span class="hljs-comment">//i未记录</span><br>            path.<span class="hljs-built_in">push_back</span>(nums[i]);<br>            record[i]=<span class="hljs-number">1</span>;  <span class="hljs-comment">//表示在深入过程的下一节点不可用</span><br>            <span class="hljs-built_in">dfs</span>(nums,length,record);<br>            path.<span class="hljs-built_in">pop_back</span>(); <span class="hljs-comment">//回溯</span><br>            record[i]=<span class="hljs-number">0</span>; <span class="hljs-comment">//恢复 </span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<ul>
-<li>对于排列问题，可以知道不存在剪枝了，我们需要考虑完整的一棵树，树共有 $n!$ 个叶子节点，故复杂度为 $O(n! \times n)$</li>
-<li>这里 record 数组可以优化掉，通过交换 nums 数组的值使得已经加入 path 的值位于 record 左边，未加入的值位于右侧即可。</li>
-<li>相关题型：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/permutations/description/?envType=study-plan-v2&envId=top-interview-150">排列问题</a></li>
+<li>HTTP 协议（应用层）<ul>
+<li>客户端-服务器模型（Request 和 Reply）</li>
+<li>基于 TCP 协议。基本使用 HTTP1.1，默认开启 keep-alive，可以复用请求。</li>
+<li>无状态：即不记录客户端状态。通过 Session 来记录。</li>
+<li>方法（method）：HTTP1.0只有三种请求，HTTP1.1新增六种<ul>
+<li>GET：请求指定的页面信息，并返回实体主体。GET 方法提交的数据会直接填充在请求报文的URL上，如“<a target="_blank" rel="noopener" href="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1%E2%80%9D">https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1”</a> ，问号划分域名和GET提交的参数，A&#x3D;B中的A是参数名，B是参数值，多个参数之间用&amp;进行分割，如果参数值是中文，则会转换成诸如%ab%12加密16进制码。一般来说，浏览器处理的URL最大限度长度为1024B（不同浏览器不一样），所以GET方法提交参数长度有限制。</li>
+<li>HEAD：类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</li>
+<li>POST：向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和&#x2F;或已有资源的修改。POST 方法提交的数据会附在正文上，一般请求正文的长度是没有限制的。</li>
+</ul>
+</li>
+<li>状态码（status code）：<ul>
+<li>1xx：信息类状态码</li>
+<li>2xx：成功状态码<ul>
+<li>200-OK：请求被成功处理，服务端正确返回用户数据。</li>
+<li>201-Created：请求被成功处理且在服务器创建了一个新的资源，比如 POST 请求创建新用户。</li>
+<li>202-Accepted：服务端收到请求但还未处理</li>
+<li>204-No Content：服务端收到请求且处理了，但是没有返回内容。</li>
+</ul>
+</li>
+<li>3xx：重定向状态码<ul>
+<li>301-Moved Permanently：资源被永久重定向，比如网址被更换。</li>
+<li>302-Found：资源被临时重定向了</li>
+</ul>
+</li>
+<li>4xx：客户端错误状态码<ul>
+<li>400-Bad Request：发送的 HTTP 请求存在问题，如参数不合法，请求方法错误</li>
+<li>401-Unauthorized：未认证请求</li>
+<li>403-Forbidden：拒绝请求，针对非法请求</li>
+<li>404-Not Found：资源未找到</li>
+<li>409-Conflict：请求的资源与服务端当前的状态存在冲突</li>
+</ul>
+</li>
+<li>5xx：服务端错误状态码<ul>
+<li>500-Internal Server Error：服务器出问题</li>
+<li>502-Bad Gateway：我们的网关将请求转发到服务端，但是服务端返回的却是一个错误的响应。</li>
 </ul>
 </li>
 </ul>
-<h3 id="2-动态规划-优化思路"><a href="#2-动态规划-优化思路" class="headerlink" title="2. 动态规划 + 优化思路"></a>2. 动态规划 + 优化思路</h3><ul>
-<li>经典例题：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/house-robber/?envType=study-plan-v2&envId=top-interview-150">打家劫舍</a>，<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/coin-change/description/?envType=study-plan-v2&envId=top-interview-150">零钱兑换</a></li>
-<li>快速幂：以 $O(logn)$ 复杂度计算乘方。对于 $2^{18}$，只需按以下顺序计算：$2^1 \rightarrow 2^2 \rightarrow 2^4 \rightarrow 2^9 \rightarrow 2^{18} $。该算法可扩展到矩阵快速幂，运用于动态规划的优化。例题：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/climbing-stairs/?envType=study-plan-v2&envId=top-interview-150">斐波那契数列</a>  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">quick_pow</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span>&#123;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(b)&#123;<br>        <span class="hljs-keyword">if</span>(b&amp;<span class="hljs-number">1</span>) ans *= a;<br>        a *= a;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure>
-  由于取模不会影响乘法：$(a \times b) \ \ mod \ p &#x3D; (a \ mod \ p) \times (b \ mod \ p) mod \ p$，故对于求$a^b \ mod \ m$ 可以使用快速幂：  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">binpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a, <span class="hljs-type">long</span> <span class="hljs-type">long</span> b, <span class="hljs-type">long</span> <span class="hljs-type">long</span> m)</span> </span>&#123;<br>    a %= m;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> res = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (b &gt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">if</span> (b &amp; <span class="hljs-number">1</span>) res = res * a % m;<br>        a = a * a % m;<br>        b &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure></li>
-<li>滚动数组：当 DP 的结果不需要中间过程时，可以根据 DP 的迭代公式使用几个变量维护，而不用完整记录过程的值。</li>
+</li>
 </ul>
-
+</li>
+<li>WebSocket（应用层）<ul>
+<li>全双工，客户端和服务器可以同时发送和接收数据</li>
+<li>用于弥补 HTTP 协议在持久通信能力上的不足。客户端和服务器仅需一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。</li>
+<li>应用场景：视频弹幕、实时消息推送。</li>
+</ul>
+</li>
+<li>DNS（应用层）<ul>
+<li>基于 UDP</li>
+<li>用于解决域名和 IP 地址的映射问题</li>
+</ul>
+</li>
+</ol>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><h3 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h3>
                 
               </div>
             
@@ -308,7 +348,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Leetcode/" class="print-no-link">#Leetcode</a>
+        <a href="/tags/%E5%AE%9E%E4%B9%A0/" class="print-no-link">#实习</a>
       
     </div>
   
@@ -320,8 +360,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>重要题型</div>
-      <div>http://xu-zhy.github.io/2024/04/04/OJpattern/</div>
+      <div>八股复习</div>
+      <div>http://xu-zhy.github.io/2024/04/07/offer/</div>
     </div>
     <div class="license-meta">
       
@@ -333,7 +373,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月4日</div>
+          <div>2024年4月7日</div>
         </div>
       
       
@@ -365,18 +405,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/07/offer/" title="八股复习">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">八股复习</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/04/stl_api/" title="C++ API">
-                        <span class="hidden-mobile">C++ API</span>
+                      <a href="/2024/04/04/OJpattern/" title="重要题型">
+                        <span class="hidden-mobile">重要题型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

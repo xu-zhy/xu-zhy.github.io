@@ -16,19 +16,22 @@
   <meta name="author" content="lafe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="Zhiyong Xu">
+    <meta name="description" content="pair1#include &lt;utility&gt;  二分查找 lower_bound()和upper_bound()：在一个排好序的数组中进行二分查找。   lower_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ API">
 <meta property="og:url" content="http://xu-zhy.github.io/2024/04/04/stl_api/index.html">
 <meta property="og:site_name" content="Zhiyong Xu">
+<meta property="og:description" content="pair1#include &lt;utility&gt;  二分查找 lower_bound()和upper_bound()：在一个排好序的数组中进行二分查找。   lower_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找第一个大于或等于num的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-04T07:01:31.176Z">
-<meta property="article:modified_time" content="2024-04-04T07:01:31.176Z">
+<meta property="article:modified_time" content="2024-04-05T09:31:57.809Z">
 <meta property="article:author" content="lafe">
+<meta property="article:tag" content="STL">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Zhiyong Xu</title>
+  <title>C++ API - Zhiyong Xu</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="C++ API"></span>
           
         </div>
 
@@ -217,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          173 字
         
       </span>
     
@@ -228,7 +231,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -265,12 +268,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">C++ API</h1>
             
             
               <div class="markdown-body">
                 
-                
+                <h3 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;utility&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><ul>
+<li>lower_bound()和upper_bound()：在一个排好序的数组中进行二分查找。  </li>
+<li>lower_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找<strong>第一个大于或等于num</strong>的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标。</li>
+<li>upper_bound( begin,end,num)：从数组的begin位置到end-1位置二分查找<strong>第一个大于num</strong>的数字，找到返回该数字的地址，不存在则返回end。通过返回的地址减去起始地址begin,得到找到数字在数组中的下标</li>
+</ul>
+
                 
               </div>
             
@@ -278,6 +288,13 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/STL/" class="print-no-link">#STL</a>
+      
+    </div>
   
 </div>
 
@@ -287,7 +304,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
+      <div>C++ API</div>
       <div>http://xu-zhy.github.io/2024/04/04/stl_api/</div>
     </div>
     <div class="license-meta">
@@ -342,7 +359,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/23/review/" title="数据结构">
+                      <a href="/2024/03/23/datastruct/" title="数据结构">
                         <span class="hidden-mobile">数据结构</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -400,6 +417,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -593,6 +616,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
