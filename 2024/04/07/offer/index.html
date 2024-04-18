@@ -24,8 +24,9 @@
 <meta property="og:description" content="计算机网络OSI 七层模型和 TCP&#x2F;IP 五层模型：OSI 七层模型包括应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。TCP&#x2F;IP 四层模型少了表示层和会话层，并将数据链路层和物理层合为网络接口层（课本上讲的五层模型是教学使用）。 为什么分层？ 各层相互独立，不须关注其他层的实现。 灵活性和可替换性：每一层都可以根据需要进行修改或替换，而不会影响到整个网络的结构">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://xu-zhy.github.io/offer/osi.png">
+<meta property="og:image" content="http://xu-zhy.github.io/2024/04/07/offer/pvm.png">
 <meta property="article:published_time" content="2024-04-07T02:36:23.687Z">
-<meta property="article:modified_time" content="2024-04-17T15:49:57.911Z">
+<meta property="article:modified_time" content="2024-04-18T02:34:26.437Z">
 <meta property="article:author" content="lafe">
 <meta property="article:tag" content="实习">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.6k 字
+          5.8k 字
         
       </span>
     
@@ -233,7 +234,7 @@
         
         
         
-          38 分钟
+          49 分钟
         
       </span>
     
@@ -474,7 +475,71 @@
 </ul>
 </li>
 </ul>
-<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><h3 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h3>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="冯诺依曼结构"><a href="#冯诺依曼结构" class="headerlink" title="冯诺依曼结构"></a>冯诺依曼结构</h3><ul>
+<li>存储器：程序和数据共享同一个存储空间。</li>
+<li>中央处理单元：负责执行存储器中的程序指令<ul>
+<li>算术逻辑单元（ALU）：负责执行各种算术和逻辑运算</li>
+<li>控制器：负责从存储器获取指令，解析指令，并控制计算机系统的各个部件按照指令进行操作</li>
+</ul>
+</li>
+<li>输入设备：将外部数据输入到计算机系统中，如键盘、鼠标等</li>
+<li>输出设备：将计算机系统的处理结果输出到外部设备，如显示器、打印机等</li>
+<li>总线：连接存储器、CPU、输入设备和输出设备的通信通道<ul>
+<li>数据总线：负责在各个部件之间传输数据</li>
+<li>地址总线：负责传输数据所对应的存储器地址</li>
+<li>控制总线：负责传输控制信号，用于同步和协调各个部件的工作</li>
+</ul>
+</li>
+</ul>
+<h3 id="中断和异常"><a href="#中断和异常" class="headerlink" title="中断和异常"></a>中断和异常</h3><ul>
+<li>外部中断：外部中断是由计算机系统外部事件触发的，通常与硬件设备相关。当外部中断发生时，处理器会完成当前指令的执行，然后跳转到中断处理程序执行。中断处理程序完成后，处理器会返回到被打断的程序继续执行。<ul>
+<li>输入&#x2F;输出设备：如键盘、鼠标、磁盘等设备在数据传输完成、缓冲区已满或发生错误时发出的中断。</li>
+<li>计时器：操作系统使用计时器产生定时中断，用于实现时间片轮转等调度策略。</li>
+<li>电源管理：例如处理器需要进入低功耗模式时发出的中断。</li>
+</ul>
+</li>
+<li>异常：由计算机系统内部事件触发的，通常与正在执行的程序或指令有关。<ul>
+<li>算术异常：如除以零、溢出等。</li>
+<li>地址异常：如非法内存访问、页面错误等。</li>
+<li>系统调用：程序请求操作系统提供服务时触发的异常。</li>
+<li>保护异常：如程序试图访问受保护的资源或执行非法操作时触发的异常。</li>
+</ul>
+</li>
+</ul>
+<h3 id="地址翻译"><a href="#地址翻译" class="headerlink" title="地址翻译"></a>地址翻译</h3><ul>
+<li>每个程序有一个虚拟地址空间，地址翻译将每个虚拟地址映射到物理地址。虚拟地址由 【虚拟页号+页内偏移】组成，通过查找页表，将虚拟页号映射为物理页框号，再与页内偏移合并，即可得到物理地址。</li>
+<li>每个程序有单独的页表。实际为了避免页表过大浪费空间，实现了多级页表，将虚拟页号进一步划分为多个部分。</li>
+<li>由于地址翻译需要两次访存，通过 TLB 的硬件缓存加速地址翻译。</li>
+</ul>
+<h3 id="进程虚拟内存（PVM）"><a href="#进程虚拟内存（PVM）" class="headerlink" title="进程虚拟内存（PVM）"></a>进程虚拟内存（PVM）</h3><p><img src="/2024/04/07/offer/pvm.png" srcset="/img/loading.gif" lazyload alt="pvm"></p>
+<h3 id="触发用户态和内核态之间的切换的场景"><a href="#触发用户态和内核态之间的切换的场景" class="headerlink" title="触发用户态和内核态之间的切换的场景"></a>触发用户态和内核态之间的切换的场景</h3><ul>
+<li>系统调用（System Call）：当用户程序需要请求操作系统提供的服务时，会通过系统调用进入内核态。</li>
+<li>异常（Exception）：当程序执行过程中出现错误或异常情况（如除以零、非法指令、缺页等）时，CPU会自动切换到内核态，以便操作系统能够处理这些异常。</li>
+<li>外部中断（External Interrupt）：外部设备（如键盘、鼠标、磁盘等）产生的中断信号会使CPU从用户态切换到内核态。</li>
+</ul>
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><h4 id="死锁条件"><a href="#死锁条件" class="headerlink" title="死锁条件"></a>死锁条件</h4><ul>
+<li>互斥（Mutual Exclusion）：一个资源在同一时间只能被一个线程或进程占用。</li>
+<li>占有且等待（Hold and Wait）：进程必须至少持有一个资源，并等待获取其他进程当前持有的其他资源</li>
+<li>不可抢占（No Preemption）：资源不能被抢占。资源只能在进程完成任务后自己决定释放</li>
+<li>循环等待（Circular wait）：必须存在等待进程的集合{P0，P1，…，Pn}，使得P0正在等待P1所持有的资源，P1正在等待P2所持有的一个资源。。。，Pn-1正在等待Pn所拥有的资源，Pn正在等待P0所持有的资源（这意味着保持和等待条件）</li>
+</ul>
+<h4 id="死锁处理"><a href="#死锁处理" class="headerlink" title="死锁处理"></a>死锁处理</h4><ul>
+<li>忽视：忽视并假装没有死锁发生：虽然难以置信，但却是最常见的。</li>
+<li>预防：使用协议避免死锁，确保系统永远不会发生死锁状态<ul>
+<li>破坏互斥条件：使得资源共享（不实际）</li>
+<li>破坏占有且等待条件：要求线程&#x2F;进程在请求资源之前释放所有已经持有的资源，或者一次性请求所有需要的资源</li>
+<li>破坏不可抢占条件：操作系统能够抢占资源（costly）</li>
+<li>破坏循环等待条件：为资源排序，申请资源只能按顺序</li>
+</ul>
+</li>
+<li>避免：死锁避免要求提前向操作系统提供有关进程在其生命周期内将请求和使用哪些资源的额外信息，以确保不会发生死锁。避免循环等待。（Tough, But good theoretical problem, not as practical as use - Example: <strong>Banker’s Algorithm</strong>）</li>
+<li>检测和恢复：<ul>
+<li>检测：循环遍历资源图找环 (expensive)</li>
+<li>恢复：一旦找到死锁，两种处理方案，一是终止所有死锁进程，二是抢占资源</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><h3 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h3>
                 
               </div>
             
@@ -538,29 +603,6 @@
 
 
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2024/04/17/sql/" title="SQL 总结">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SQL 总结</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2024/04/04/OJpattern/" title="重要题型">
-                        <span class="hidden-mobile">重要题型</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
