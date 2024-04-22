@@ -16,15 +16,15 @@
   <meta name="author" content="lafe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="创建表：  1234567create table students(sid char(8) NOT NULL UNIQUE,grade int,primary key(cid),check(grade &gt; 1999),foreign key(grade) references A on delete cascade);  也可以使用 constraint PK_A primary key">
+    <meta name="description" content="创建表：  1234567create table students(    sid char(8) NOT NULL UNIQUE,    grade int,    primary key(cid),    check(grade &gt; 1999),    foreign key(grade) references A on delete cascade);  也可以使用 constra">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL 总结">
 <meta property="og:url" content="http://xu-zhy.github.io/2024/04/17/sql/index.html">
 <meta property="og:site_name" content="Zhiyong Xu">
-<meta property="og:description" content="创建表：  1234567create table students(sid char(8) NOT NULL UNIQUE,grade int,primary key(cid),check(grade &gt; 1999),foreign key(grade) references A on delete cascade);  也可以使用 constraint PK_A primary key">
+<meta property="og:description" content="创建表：  1234567create table students(    sid char(8) NOT NULL UNIQUE,    grade int,    primary key(cid),    check(grade &gt; 1999),    foreign key(grade) references A on delete cascade);  也可以使用 constra">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-17T02:54:07.025Z">
-<meta property="article:modified_time" content="2024-04-17T03:01:30.276Z">
+<meta property="article:modified_time" content="2024-04-22T03:43:49.442Z">
 <meta property="article:author" content="lafe">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary_large_image">
@@ -275,7 +275,7 @@
                 
                 <ol>
 <li><p>创建表：</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> students(<br>sid <span class="hljs-type">char</span>(<span class="hljs-number">8</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">UNIQUE</span>,<br>grade <span class="hljs-type">int</span>,<br><span class="hljs-keyword">primary</span> key(cid),<br><span class="hljs-keyword">check</span>(grade <span class="hljs-operator">&gt;</span> <span class="hljs-number">1999</span>),<br><span class="hljs-keyword">foreign</span> key(grade) <span class="hljs-keyword">references</span> A <span class="hljs-keyword">on</span> <span class="hljs-keyword">delete</span> cascade<br>);<br></code></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> students(<br>    sid <span class="hljs-type">char</span>(<span class="hljs-number">8</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">UNIQUE</span>,<br>    grade <span class="hljs-type">int</span>,<br>    <span class="hljs-keyword">primary</span> key(cid),<br>    <span class="hljs-keyword">check</span>(grade <span class="hljs-operator">&gt;</span> <span class="hljs-number">1999</span>),<br>    <span class="hljs-keyword">foreign</span> key(grade) <span class="hljs-keyword">references</span> A <span class="hljs-keyword">on</span> <span class="hljs-keyword">delete</span> cascade<br>);<br></code></pre></td></tr></table></figure>
 <p> 也可以使用 constraint PK_A primary key(cid) 指定名称， constraint PK_2 check(sage&gt;1000)<br> on delete no action 不允许对主表的更新和删除操作【从表为查找别人的表，主表为被参考表】</p>
 </li>
 <li><p>增加属性列</p>
