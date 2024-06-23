@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>开发环境部署文档</title>
+    <link href="/2024/06/23/env/"/>
+    <url>/2024/06/23/env/</url>
+    
+    <content type="html"><![CDATA[<h1 id="部署项目的开发环境"><a href="#部署项目的开发环境" class="headerlink" title="部署项目的开发环境"></a>部署项目的开发环境</h1><ol><li><p>idea 官网下载：<a href="https://www.jetbrains.com/idea/download/?section=windows">https://www.jetbrains.com/idea/download/?section=windows</a></p><ul><li>安装后选择 30 天试用，应该够了</li><li>当然也可以顺便申请学生免费：<a href="https://blog.csdn.net/VAN666666/article/details/117197197">https://blog.csdn.net/VAN666666/article/details/117197197</a></li></ul></li><li><p>java 安装：安装java17</p><ul><li><a href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</a></li><li>配置环境变量</li></ul></li><li><p>maven 配置：</p><ul><li>maven 不需要下载</li><li>配置环境变量</li></ul></li><li><p>mysql 下载：</p><ul><li><a href="https://pan.baidu.com/share/init?surl=Iz87qYoLL9muFFmCSf0oBQ">https://pan.baidu.com/share/init?surl=Iz87qYoLL9muFFmCSf0oBQ</a> 提取码：xq2u</li><li>放到一个文件夹，然后删除 data 目录下的所有东西（为了重新初始化）</li><li>然后参考这篇文章验证：<a href="https://www.cnblogs.com/lucky-cat233/p/12831185.html">https://www.cnblogs.com/lucky-cat233/p/12831185.html</a></li><li>（中间初始化时可能 error，按提示增加–explicit_defaults_for_timestamp即可）</li></ul></li><li><p>navicat下载：</p><ul><li><a href="https://pan.baidu.com/s/1eRfeMkIYmO490kLSEhjX2Q">https://pan.baidu.com/s/1eRfeMkIYmO490kLSEhjX2Q</a> 提取码：75fh</li><li>安装后只可以试用14天</li><li>左上角新建 mysql 连接</li><li>连接后创建下表：departments（注意大小写）</li></ul></li><li><p>idea 配置 maven</p><ul><li>点击左侧 customize</li><li>点击最下面 all setting，然后搜索maven，如下配置</li></ul></li><li><p>idea 创建项目：demo1，后续参考这篇文章：<a href="https://www.cnblogs.com/detailNew/p/14967528.html">https://www.cnblogs.com/detailNew/p/14967528.html</a></p><ul><li>注意第一步不要选择 java1.8，因为现在如果选择 java1.8需要换为阿里源，会导致更多 bug，而是应该和上面下载的java版本一样，选择java17</li><li>第二步依赖那里，注意首先更改左上角 spring boot 版本为3.2.7或者更低，因为3.3以上不支持Mybatis了！！</li><li>后续文件修改记得对应位置修改为自己的配置即可。</li><li>文中还少了一步，在 idea 最右侧需要设置数据库，选择mysql连接</li><li>这一步的运行需要切换到main.java.com.example.demo下的 demo1application文件运行</li></ul></li><li><p>可能存在的问题</p><ul><li>javax.annotation 报错，在 pom.xml中添加 <dependency> <groupId>javax.annotation</groupId> <artifactId>javax.annotation-api</artifactId> <version>1.2</version> </dependency></li><li>maven 报错：java版本5不支持<br>  .m2 目录下一直打开，直到进入 conf 文件夹，修改 setting.xml 中200多行的位置为</li></ul></li><li><p>成功效果</p></li></ol><p>有用的网站</p><ol><li>Maven Repository: <a href="https://mvnrepository.com/">Search&#x2F;Browse&#x2F;Explore (mvnrepository.com)</a></li><li>Navicat的安装与mysql数据库的连接保姆级教程_navicat：<a href="https://blog.csdn.net/qq_57421630/article/details/120651484">https://blog.csdn.net/qq_57421630/article/details/120651484</a></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>软件工程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>软件工程开发计划文档</title>
+    <link href="/2024/06/23/softwareplan/"/>
+    <url>/2024/06/23/softwareplan/</url>
+    
+    <content type="html"><![CDATA[<h1 id="开发计划文档"><a href="#开发计划文档" class="headerlink" title="开发计划文档"></a>开发计划文档</h1><h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><blockquote><p>最近的任务和目标</p></blockquote><h3 id="XZY"><a href="#XZY" class="headerlink" title="XZY"></a>XZY</h3><ol><li><del>数据：全国省份旅游景点数据</del></li><li><del>API: 基于省份名称获取省份景点信息</del></li><li><del>数据库：添加地标表</del></li><li><del>API: 基于省份名称获取地标景点</del></li><li>数据：景区图片爬虫 -&gt; Now: 471 pics</li><li><del>API：根据景区名获得图片</del></li><li><del>阿里云服务器配置与网站部署</del></li><li><del>服务器加载景点图片资源</del></li><li><del>API：根据景区名称获得景区信息</del></li><li><del>用户登录与注册逻辑</del>+用户登录状态维护（待测试）</li><li><del>景区描述信息</del></li><li><del>API：根据关键词搜索</del></li><li><del>API: 用户收藏展示与添加收藏</del>+未测试添加</li></ol><h3 id="KJX"><a href="#KJX" class="headerlink" title="KJX"></a>KJX</h3><ol><li><del>实现基础省份地图</del></li><li><del>实现点击后变色和跳转</del></li><li><del>实现右上角的缩略介绍框</del></li><li><del>实现跳转后按照省份准确缩放</del> + 添加了卫星背景图</li><li>美化地图</li><li><del>实现跳转后省份出现可点击的景点</del></li><li>实现可点击图标的弹跳动画</li><li><del>导航栏的实现和基础 HTML 跳转</del></li><li><del>双击进入省份，单击marker交互，右击回到大屏幕</del></li><li>自定义信息窗体的 X 关闭功能有问题</li><li><del>信息窗体内的图片 resize</del> ps:实现的很莫名其妙，但是成功了</li><li><del>通用景点展示 html</del></li><li><del>用户个人界面</del></li><li><del>景点收藏功能 + 正常内容显示</del></li><li><del>搜索框内容</del></li><li><del>新闻、博客、收藏界面的通用显示框架</del></li><li><del>signup 实现 - 是否需要实现判断输入是否符合要求的功能</del></li><li><del>所有页面 &#x2F; index页面的用户登录判断</del></li><li>小bug：index、user 和 blogs、news 的导航栏的搜索框和用户名样式有一点不同，不知原因</li><li><del>用户个人界面查看个人信息(修改个人信息？)、查看收藏景点、我的历史评论、我的发布博客 - 历史评论发布博客不实现，收藏不用删除</del></li></ol><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><blockquote><p>注意事项，或者环境配置和运行指南上的指示</p></blockquote><h3 id="XZY-1"><a href="#XZY-1" class="headerlink" title="XZY"></a>XZY</h3><ul><li><strong>2024-6-16: 数据库 schema 修改，增加 landmark 表，需重新导入 sql 文件</strong></li><li><strong>2024-6-17: 关于图片的获取，前端需先获得景区名再由景区名（中文）请求图片</strong></li><li><strong>2024-6-21: 用户登录和注册逻辑的前端逻辑参考 interfaces.md</strong></li></ul><h3 id="KJX-1"><a href="#KJX-1" class="headerlink" title="KJX"></a>KJX</h3><ul><li>2024.6.16: 地图页面的操作方式改为，双击点击省份获取信息，单击图标获取详细信息，右键任意地方回到大地图尺度</li></ul><h2 id="Future-Plans"><a href="#Future-Plans" class="headerlink" title="Future Plans"></a>Future Plans</h2><blockquote><p>一些可以去思考和实现的想法</p></blockquote><h3 id="XZY-2"><a href="#XZY-2" class="headerlink" title="XZY"></a>XZY</h3><ol><li><del>Google Trends API –&gt; Failed</del></li><li></li></ol><h3 id="KJX-2"><a href="#KJX-2" class="headerlink" title="KJX"></a>KJX</h3><ol start="0"><li>主题可以是 “全国旅游信息公开汇总平台”</li><li>主页面是地图，导航栏在上面加功能</li><li>导航栏可以包括：地图+搜索、热点新闻、博客分享、旅游路线推荐</li><li>天气预报功能 </li><li>用户系统，JavaScript 弹窗实现用户登录？</li></ol><h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><blockquote><p>划分自己的贡献和已完成的工作内容</p></blockquote><h3 id="XZY-3"><a href="#XZY-3" class="headerlink" title="XZY"></a>XZY</h3><h3 id="KJX-3"><a href="#KJX-3" class="headerlink" title="KJX"></a>KJX</h3><ol><li>建立了基础的前端网页框架</li><li>使用高德地图 js api，配置了基础的 keys 和地图样式</li><li>实现了静态的地图主页面，其中功能有上方的导航栏、搜索栏和用户信息，地图本身，地图右上的注释框，地图的省级层级轮廓划分，省级的名称标签显示，点标记的实现，地图上的三个鼠标事件，点标记的信息窗口和对应事件</li></ol><ul><li>ps:在 static&#x2F;ignore&#x2F;datavMap 中，探索实现了将阿里云的 DataV 的 TopoJSON 数据转换为 GeoJSON 数据的方法</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>软件工程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>软件工程接口文档</title>
     <link href="/2024/06/23/interface/"/>
     <url>/2024/06/23/interface/</url>
