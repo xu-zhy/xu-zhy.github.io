@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Xu Zhiyong（许志勇）"
+title                    : "Xu Zhiyong"
 description              : "Study in SYSU"
 repository               : "xu-zhy/xu-zhy.github.io"
 google_scholar_stats_use_cdn : true
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/xu-zhy"
+  github           : "xu-zhy"
   google_plus      :
   keybase          :
   instagram        :
