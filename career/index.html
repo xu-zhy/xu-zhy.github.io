@@ -1,0 +1,62 @@
+---
+layout: null
+permalink: /career/
+sitemap: false
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Career OS · 私人工作台</title>
+  <link rel="stylesheet" href="{{ '/assets/css/career.css' | relative_url }}">
+  <script type="module" src="{{ '/assets/js/career/app.mjs' | relative_url }}"></script>
+</head>
+<body>
+  <div id="gate" class="gate">
+    <a class="home-link" href="{{ '/' | relative_url }}">← 个人主页</a>
+    <main class="gate-card">
+      <p class="eyebrow">YOUR NEXT CHAPTER</p>
+      <h1>Career OS<span>把目标，变成下一步。</span></h1>
+      <p class="muted">规划、求职、学习，一个属于自己的工作台。</p>
+      <form id="unlock-form">
+        <h2 id="gate-title">打开私人空间</h2>
+        <label>解锁口令<input id="password" type="password" autocomplete="current-password" required maxlength="256"></label>
+        <label id="confirm-label" hidden>再次输入口令<input id="confirm-password" type="password" autocomplete="new-password" maxlength="256"></label>
+        <button class="primary" id="unlock-button" type="submit">解锁</button>
+      </form>
+      <p id="gate-message" role="status"></p>
+      <div class="privacy-note"><strong>数据留在你的浏览器</strong><p>使用口令加密保存，口令不会上传。首次使用请设置至少 12 位的长口令；遗忘后无法找回。清除浏览器数据会删除本机记录，请定期导出加密备份。</p><p>电脑和手机通过备份手动迁移，暂不自动同步。请在可信设备上使用。</p></div>
+      <button id="gate-import" class="quiet" type="button">从加密备份恢复</button>
+    </main>
+  </div>
+  <div id="workspace" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="{{ '/career/' | relative_url }}">C<span>Career OS<small>PRIVATE WORKSPACE</small></span></a>
+      <nav aria-label="工作台导航">
+        <button data-view="dashboard" class="active">◈ <span>总览</span></button>
+        <button data-view="tasks">☷ <span>规划与任务</span></button>
+        <button data-view="jobs">↗ <span>求职与面试</span></button>
+        <button data-view="knowledge">◇ <span>技术知识库</span></button>
+      </nav>
+      <div class="sidebar-bottom"><p class="local-badge">● 本地加密 · 私人空间</p><button id="export">导出加密备份</button><button id="import">恢复加密备份</button><button id="lock">锁定工作台</button><a href="{{ '/' | relative_url }}">← 返回个人主页</a></div>
+    </aside>
+    <main class="content">
+      <header><div><p id="today" class="eyebrow"></p><h1 id="view-title">每一步，都算数。</h1><p id="view-description" class="muted"></p></div><button id="add" class="primary">＋ 新建任务</button></header>
+      <p id="message" role="status" class="save-message"></p>
+      <section id="dashboard"></section>
+      <section id="collection" hidden>
+        <div class="toolbar"><label class="search">搜索记录<input id="search" type="search" placeholder="搜索标题、分类、城市或笔记…"></label><label>状态<select id="status-filter"></select></label><label id="time-label">日期范围<select id="time-filter"><option value="all">全部日期</option><option value="today">今日</option><option value="week">本周</option><option value="future">未来</option><option value="overdue">已逾期</option></select></label></div>
+        <div id="records" class="records"></div>
+      </section>
+      <footer>仅在本机保存 · 离开页面即锁定 · 闲置 5 分钟自动锁定</footer>
+    </main>
+  </div>
+  <dialog id="editor"><form id="edit-form"><div class="dialog-head"><h2 id="editor-title"></h2><button type="button" data-close="editor" aria-label="关闭">×</button></div><div id="fields" class="fields"></div><p id="editor-error" role="alert"></p><div class="dialog-actions"><button type="button" data-close="editor">取消</button><button class="primary" id="save" type="submit">保存并加密</button></div></form></dialog>
+  <dialog id="restore"><form id="restore-form"><div class="dialog-head"><h2>恢复加密备份</h2><button type="button" data-close="restore" aria-label="关闭">×</button></div><p>恢复会替换本机全部记录。建议先导出当前备份。恢复后使用备份原有口令解锁。</p><label>加密备份文件<input id="backup-file" type="file" accept=".json,application/json" required></label><label>备份的口令<input id="backup-password" type="password" autocomplete="off" required maxlength="256"></label><label class="check-label"><input id="replace-confirm" type="checkbox" required>我确认使用备份替换本机记录</label><p id="restore-error" role="alert"></p><div class="dialog-actions"><button type="button" data-close="restore">取消</button><button id="restore-button" class="primary" type="submit">验证并恢复</button></div></form></dialog>
+  <noscript>Career OS 需要启用 JavaScript 才能在本机加密和管理记录。</noscript>
+</body>
+</html>

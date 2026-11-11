@@ -65,6 +65,10 @@ Some examples:
 1. If you change the source code of the website, the livereload server will automatically refresh.
 1. When you finish the modification of your homepage, `commit` your changings and `push` to your remote REPO using `git` command.
 
+## Career OS
+
+The `/career/` workspace adds encrypted, browser-local career planning, application tracking, interview notes, and a knowledge library. See [使用与保密说明](docs/career-os.md) for setup, encrypted backups, privacy boundaries, and validation commands. Private records are not stored in this repository.
+
 # Acknowledges
 
 - AcadHomepage incorporates Font Awesome, which is distributed under the terms of the SIL OFL 1.1 and MIT License.
